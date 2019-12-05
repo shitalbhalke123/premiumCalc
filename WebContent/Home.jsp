@@ -8,11 +8,9 @@
 </head>
 <body>
 <form action="VehicleController" method="post">  
-Name:  <input type="text" placeholder="Enter Name" name="name" required="required"><br><br>
-Contact Number:  <input type="number" placeholder="Enter MobNo" name="mobileno" required="required"><br><br>
-EmailID:  <input type="text" placeholder="Enter EmailId" name="email" required="required"><br><br>
-Vehical Number:  <input type="text" placeholder="Enter VehicleNumber" name="vehiclenumber" required="required"><br><br>
- <button type="submit">Next</button><br><br>    
+Vehicle Number:  <input type="text" placeholder="Enter VehicleNumber" name="vehiclenumber" required="required"><br><br>
+ <button type="submit">Next</button><br><br> 
+ <a href="next.jsp">Proceed without Vehicle number</a>   
 </form>
 </body>
 </html>

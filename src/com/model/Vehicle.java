@@ -4,7 +4,16 @@ public class Vehicle {
 	String vehicleNumber, vehicleType, manufacturer, vehicleModel, engineCC, fuelType, passingYear, chassisNo,
 			vehicleColour;
 	Float vehicleCost;
+	Customer customer;
 	
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
 	public Vehicle() {
 		super();
 	}

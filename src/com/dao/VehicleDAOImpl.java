@@ -10,10 +10,12 @@ import com.utility.DBUtility;
 
 public class VehicleDAOImpl implements VehicleDAO {
 Connection con;
+CustomerDAO customerDAO=new CustomerDAOImpl();
 	@Override
 	public Vehicle getVehicleByVehicleNumber(String vehicleNumber) {
 		String sql="select * from tbl_rto where vehicle_no=?";
 	     con=DBUtility.getConnection();
+	     System.out.println("connection created");
 	     Vehicle vehicle=new Vehicle();
 			try {
 				PreparedStatement pst=con.prepareStatement(sql);
@@ -33,6 +35,9 @@ Connection con;
 				vehicle.setVehicleCost(rs.getFloat(8));
 				vehicle.setChassisNo(rs.getString(9));
 				vehicle.setVehicleColour(rs.getString(10));
+				Integer customerId=rs.getInt(11);
+				vehicle.setCustomer(customerDAO.getCustomerByCustomerId(customerId));
+				
 				return vehicle;	
 				}
 			} catch (SQLException e) {
